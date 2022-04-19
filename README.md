@@ -1,5 +1,6 @@
 # Learning with Signatures
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/learning-with-signatures/image-classification-on-mnist)](https://paperswithcode.com/sota/image-classification-on-mnist?p=learning-with-signatures)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/learning-with-signatures/image-classification-on-cifar-10)](https://paperswithcode.com/sota/image-classification-on-cifar-10?p=learning-with-signatures)
 
 The code in this repository corresponds to the article https://arxiv.org/abs/2204.07953
 
