@@ -13109,7 +13109,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -13149,7 +13149,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[168]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">iisignature</span>
@@ -13189,7 +13189,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[169]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Choose dataset.</span>
@@ -13203,7 +13203,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[170]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;afhq&#39;</span><span class="p">:</span>
@@ -13236,8 +13236,8 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
   <span class="n">n_signatures</span> <span class="o">=</span> <span class="mi">10</span>
   <span class="n">N_truncated</span> <span class="o">=</span> <span class="mi">2</span>
   <span class="n">d</span> <span class="o">=</span> <span class="mi">16</span>
-  <span class="n">begin_validate</span> <span class="o">=</span> <span class="mi">10</span>
-  <span class="n">end_validate</span> <span class="o">=</span> <span class="mi">110</span>
+  <span class="n">begin_validate</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">end_validate</span> <span class="o">=</span> <span class="mi">100</span>
 </pre></div>
 
     </div>
@@ -13247,7 +13247,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[171]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Path where train instances can be found.</span>
@@ -13276,7 +13276,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[172]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute a class representative for each category using (0:n_signatures) from train.</span>
@@ -13319,7 +13319,25 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[173]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;shapes&#39;</span><span class="p">:</span> <span class="c1">#First samples (begin:end) from validation.</span>
+  <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/datasets_de_curto_and_de_zarza/shapes/val/&#39;</span>
+
+<span class="c1">#Path where validation instances can be found.</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">categories</span><span class="p">):</span>
+  <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">labels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Load validation instances from train (begin:end) and compute signatures to tune the weights.</span>
@@ -13361,7 +13379,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[174]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;afhq&#39;</span><span class="p">:</span>
@@ -13372,20 +13390,8 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
   <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/datasets_de_curto_and_de_zarza/mnist/testing/&#39;</span>
 <span class="k">elif</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;shapes&#39;</span><span class="p">:</span>
   <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/datasets_de_curto_and_de_zarza/shapes/test/&#39;</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[175]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#Path where test instances can be found.</span>
-
+<span class="c1">#Path where test instances can be found.</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">categories</span><span class="p">):</span>
   <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">labels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
 </pre></div>
@@ -13405,7 +13411,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Load test instances and compute signatures.</span>
@@ -13440,7 +13446,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[177]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute RMSE Signature and print accuracy.</span>
