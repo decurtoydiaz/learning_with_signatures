@@ -4,7 +4,7 @@
 
 The code in this repository corresponds to the article https://arxiv.org/abs/2204.07953
 
-We provide a python notebook to reproduce the experiments in Sections 4 (100% accuracy on AFHQ, MNIST, CIFAR10 and Four Shapes).
+We provide a python notebook to reproduce the experiments in Section 4 (100% accuracy on AFHQ, MNIST, CIFAR10 and Four Shapes). Computation is done at the CPU, orders of magnitude faster than DL Methods and with no learned hyperparameters. Weights (that is, optimal scale factors) are computed analytically by Definition 4. RMSE Signature is used as score function.
 
 ## Citation
 If you find the manuscript or notebook useful in your research, please cite the paper `https://arxiv.org/abs/2204.07953`.
