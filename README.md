@@ -9,7 +9,7 @@ We provide a python notebook (also exported to HTML format for ease of readibili
 ## Citation
 If you find the manuscript or notebook useful in your research, please cite the paper `https://arxiv.org/abs/2204.07953`.
 
-    @article{signaturesdecurto2022,
+    @article{decurto_and_dezarza22,
       title={{L}earning with {S}ignatures},
       author={{de Curt{\`o}}, J. and {de Zarz{\`a}}, I. and {Calafate}, Carlos T. and {Yan}, Hong},
       journal={arXiv:2204.07953},
