@@ -13109,7 +13109,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -13130,7 +13130,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&#34;/content/drive&#34;, force_remount=True).
+<pre>Mounted at /content/drive
 </pre>
 </div>
 </div>
@@ -13149,7 +13149,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">iisignature</span>
@@ -13169,8 +13169,17 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: iisignature in /usr/local/lib/python3.7/dist-packages (0.24)
-Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-packages (from iisignature) (1.21.5)
+<pre>Collecting iisignature
+  Downloading iisignature-0.24.tar.gz (1.3 MB)
+     |████████████████████████████████| 1.3 MB 23.1 MB/s 
+Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-packages (from iisignature) (1.21.6)
+Building wheels for collected packages: iisignature
+  Building wheel for iisignature (setup.py) ... done
+  Created wheel for iisignature: filename=iisignature-0.24-cp37-cp37m-linux_x86_64.whl size=2528261 sha256=c111cda61bd26bb715e5171ba20267ecf62716270d54bca5d04c448cabe316c0
+  Stored in directory: /root/.cache/pip/wheels/d6/99/a3/b2b3f95df7c69f664e92b4ec58b8da922cb95bc394700cbc0f
+Successfully built iisignature
+Installing collected packages: iisignature
+Successfully installed iisignature-0.24
 </pre>
 </div>
 </div>
@@ -13189,11 +13198,11 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Choose dataset.</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="s1">&#39;cifar10&#39;</span> <span class="c1">#@param [&#39;afhq&#39;, &#39;cifar10&#39;, &#39;mnist&#39;, &#39;shapes&#39;]</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="s1">&#39;afhq&#39;</span> <span class="c1">#@param [&#39;afhq&#39;, &#39;cifar10&#39;, &#39;mnist&#39;, &#39;shapes&#39;]</span>
 </pre></div>
 
     </div>
@@ -13203,7 +13212,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;afhq&#39;</span><span class="p">:</span>
@@ -13247,7 +13256,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Path where train instances can be found.</span>
@@ -13266,6 +13275,26 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute signature.</span>
+<span class="k">def</span> <span class="nf">signature_cyz</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="n">filename</span><span class="p">):</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="n">filename</span><span class="p">))</span>
+  <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">iisignature</span><span class="o">.</span><span class="n">sig</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">N_truncated</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13276,7 +13305,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute a class representative for each category using (0:n_signatures) from train.</span>
@@ -13292,12 +13321,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
   <span class="n">dataA</span><span class="o">=</span> <span class="p">[]</span>
   <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
   <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_signatures</span><span class="p">]:</span>
-      <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">filename</span><span class="p">))</span>
-      <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">iisignature</span><span class="o">.</span><span class="n">sig</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">N_truncated</span><span class="p">)</span>
-          <span class="n">dataA</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">image</span><span class="p">,</span> <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">filename</span><span class="p">])</span>
+    <span class="n">dataA</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">signature_cyz</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">filename</span><span class="p">),</span> <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">filename</span><span class="p">])</span>
 
   <span class="n">featuresA</span><span class="p">,</span> <span class="n">imagesA</span>  <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dataA</span><span class="p">)</span>
   <span class="n">supermeanA</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">featuresA</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13319,7 +13343,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;shapes&#39;</span><span class="p">:</span> <span class="c1">#First samples (begin:end) from validation.</span>
@@ -13337,7 +13361,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Load validation instances from train (begin:end) and compute signatures to tune the weights.</span>
@@ -13347,17 +13371,12 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
   <span class="n">dataAA</span><span class="o">=</span> <span class="p">[]</span>
   <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
   <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="n">begin_validate</span><span class="p">:</span><span class="n">end_validate</span><span class="p">]:</span>
-      <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">filename</span><span class="p">))</span>
-      <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">iisignature</span><span class="o">.</span><span class="n">sig</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">N_truncated</span><span class="p">)</span>
-          <span class="n">dataAA</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">image</span><span class="p">,</span> <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">filename</span><span class="p">])</span>
+    <span class="n">dataAA</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">signature_cyz</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">filename</span><span class="p">),</span> <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">filename</span><span class="p">])</span>
 
   <span class="n">featuresAA</span><span class="p">,</span> <span class="n">imagesAA</span>  <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dataAA</span><span class="p">)</span>
 
-  <span class="c1">#Trying to estimate the optimal \lambda_{*}</span>
-  <span class="c1">#we solve the inverse problem lambda * supermeanA = featuresAA[z] z:0..500</span>
+  <span class="c1">#Estimate optimal \lambda_{*}</span>
+  <span class="c1">#e.g. In AFHQ we solve the inverse problem lambda * supermeanA = featuresAA[z] z:0..500</span>
   <span class="n">c_0</span> <span class="o">=</span> <span class="n">supermeanA</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
   <span class="n">c_0</span><span class="p">[</span><span class="n">c_0</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
   <span class="n">l</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">c_0</span><span class="p">)</span> <span class="o">*</span> <span class="n">featuresAA</span>
@@ -13379,7 +13398,7 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="n">datasets</span> <span class="o">==</span> <span class="s1">&#39;afhq&#39;</span><span class="p">:</span>
@@ -13404,69 +13423,36 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Load into memory signatures of test instances.</p>
+<p>Compute classification accuracy using RMSE Signature as score function. Here we assume that we can correctly resolve the ambiguity at test time of which probably good optimal lambda to use, for instance using the same criteria as in Definition 4.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#Load test instances and compute signatures.</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute RMSE Signature and print accuracy. Load test instances inside the loop, compute signatures and evaluate.</span>
 <span class="c1">#e.g. We use the full AFHQ validation set as test, that is a total of 1500 samples.</span>
-
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">categories</span><span class="p">):</span>
-  <span class="n">dataAA</span><span class="o">=</span> <span class="p">[]</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
-  <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-      <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">],</span><span class="n">filename</span><span class="p">))</span>
-      <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
-          <span class="n">image</span> <span class="o">=</span> <span class="n">iisignature</span><span class="o">.</span><span class="n">sig</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">N_truncated</span><span class="p">)</span>
-          <span class="n">dataAA</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">image</span><span class="p">,</span> <span class="n">folder</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">filename</span><span class="p">])</span>
-
-  <span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;featuresAA_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)],</span> <span class="n">imagesAA</span>  <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dataAA</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute classification accuracy using RMSE Signature as score function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="c1">#Compute RMSE Signature and print accuracy.</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">categories</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;featuresAA_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c2</span><span class="p">)])):</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c2</span><span class="p">])</span>
+  <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">rmse_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">categories</span><span class="p">):</span>
-      <span class="n">rmse_c</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;supermeanl_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c2</span><span class="p">)]</span> <span class="o">*</span> <span class="n">supermeanA</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;featuresAA_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c2</span><span class="p">)][</span><span class="n">z</span><span class="p">],</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="n">rmse_c</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;supermeanl_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c2</span><span class="p">)]</span> <span class="o">*</span> <span class="n">supermeanA</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">signature_cyz</span><span class="p">(</span><span class="n">folder</span><span class="p">[</span><span class="n">c2</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">]),</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">min_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">rmse_c</span><span class="p">)</span>
     <span class="k">if</span><span class="p">(</span><span class="n">min_rmse</span> <span class="o">!=</span> <span class="n">c2</span><span class="p">):</span> 
       <span class="n">count</span><span class="p">[</span><span class="n">c2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE &#39;</span> <span class="o">+</span> <span class="n">labels</span><span class="p">[</span><span class="n">c2</span><span class="p">])</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# of errors:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">[</span><span class="n">c2</span><span class="p">])</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">count</span><span class="p">[</span><span class="n">c2</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;featuresAA_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c2</span><span class="p">)]))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">count</span><span class="p">[</span><span class="n">c2</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
