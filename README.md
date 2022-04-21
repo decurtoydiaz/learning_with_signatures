@@ -20,5 +20,3 @@ This work is part of CIMDA (Centre for Intelligent Multidimensional Data Analysi
 A joint Center between City University of Hong Kong and the University of Oxford.
 
 Our work has been supported by HK Innovation and Technology Commission (InnoHK Project CIMDA) and HK Research Grants Council (Project CityU 11204821).
-
-Authors are also affiliated with Universitat Politècnica de València and Universitat Oberta de Catalunya.
