@@ -9,7 +9,7 @@ If you find the manuscript or notebook useful in your research, please cite the 
 
     @article{decurto_and_dezarza22,
       title={{L}earning with {S}ignatures},
-      author={{de Curt{\`o}}, J. and {de Zarz{\`a}}, I. and {Yan}, Hong},
+      author={{de Curt{\`o}}, J. and {de Zarz{\`a}}, I. and {Yan}, Hong and {Calafate}, Carlos T.},
       journal={arXiv:2204.07953},
       year={2022}
     }
