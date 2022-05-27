@@ -17,6 +17,6 @@ If you find the manuscript or notebook useful in your research, please cite the 
 ## Acknowledgements
 This work is part of CIMDA (Centre for Intelligent Multidimensional Data Analysis), HK Science Park, HK.
 
-A joint Center between City University of Hong Kong and the University of Oxford.
+The authors are also affiliated with the Department of Computer Engineering at Universitat Politècnica de València in the Group of Unmanned Aerial Vehicles and the Department of Electrical Engineering at City University of Hong Kong.
 
 Our work has been supported by HK Innovation and Technology Commission (InnoHK Project CIMDA) and HK Research Grants Council (Project CityU 11204821).
