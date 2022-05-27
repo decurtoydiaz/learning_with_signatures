@@ -13078,14 +13078,8 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Learning-with-Signatures">Learning with Signatures<a class="anchor-link" href="#Learning-with-Signatures">&#182;</a></h1><p><a href="https://arxiv.org/abs/2204.07953">https://arxiv.org/abs/2204.07953</a></p>
-<p>J. de Curtò y DíAz, I. de Zarzà i Cubero and Hong Yan.</p>
-<p>{decurtoydiaz,dezarzaycubero}@innocimda.com</p>
-<hr>
-<p><strong>Acknowledgements</strong></p>
-<p>This work is part of CIMDA (Centre for Intelligent Multidimensional Data Analysis), HK Science Park, HK.</p>
-<p>A joint Center between City University of Hong Kong and the University of Oxford.</p>
-<p>Our work has been supported by HK Innovation and Technology Commission (InnoHK Project CIMDA) and HK Research Grants Council (Project CityU 11204821).</p>
-<hr>
+<p>J. de Curtò, I. de Zarzà, Hong Yan and Carlos T. Calafate.</p>
+<p>{decurto,dezarza}@doctor.upv.es</p>
 
 </div>
 </div>
@@ -13093,7 +13087,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook we are going to illustrate an example of Few-shot Classification using Signatures on challenging datasets [AFHQ, CIFAR10, MNIST, Four Shapes] achieving 100% accuracy on all tasks, as described in Section 4. Computation is done at the CPU, with the use of very few labeled examples and without learned hyperparameters. Weights (that is, scale factors) are computed optimally by Definition 4.</p>
+<p>In this notebook we are going to illustrate a toy example of Few-shot Classification using Signatures on challenging datasets [AFHQ, CIFAR10, MNIST, Four Shapes] achieving 100% accuracy on all tasks, as described in Section 4; <strong>assuming we can determine at test time the probably optimal scale factor to use</strong>, which of course is a very hard assumption but valid to exemplify the good generalization convergence of the proposed framework. Computation is done at the CPU, with the use of very few labeled examples and without learned hyperparameters. Here weights (that is, scale factors) are computed by Definition 4, which is equivalent to only use the objective that is convex with equality to zero in Equation 8.</p>
 
 </div>
 </div>
@@ -13325,8 +13319,8 @@ Requirement already satisfied: numpy&gt;1.7 in /usr/local/lib/python3.7/dist-pac
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We load validation instances and compute optimal $\lambda_{*}$ according to Definition 4.</p>
-<p>Learning with Signatures has the computational advantage of an analytical solution for the weights (videlicet, no need to use backpropagation).</p>
+<p>We load validation instances and compute probably good optimal $\lambda_{*}$ according to Definition 4.</p>
+<p>Learning with Signatures has the computational advantage of an analytical solution for the weights (videlicet, no need to use backpropagation). <strong>Although to make the idea practical, we would the need to integrate non-linear optimizers</strong> to design probably good optimal $\lambda_{*}$.</p>
 
 </div>
 </div>
@@ -13486,7 +13480,7 @@ Accuracy: 1.0
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here we achieve 100% accuracy on AFHQ, CIFAR10, MNIST and Four Shapes (assuming we can determine in test which probably good optimal scale factor to use); indeed all of them very challeging problems for other learning frameworks, using very few labeled data, orders of magnitude faster than DL methods, with no learned hyperparameters and doing all the computation on the CPU.</p>
+<p>Here we achieve 100% accuracy on AFHQ, CIFAR10, MNIST and Four Shapes <strong>(assuming we can determine in test which probably good optimal scale factor to use)</strong>; indeed all of them very challeging problems for other learning frameworks, using very few labeled data, orders of magnitude faster than DL methods, with no learned hyperparameters and doing all the computation on the CPU. This shows the proposed architectures have the capacity to generalize very well to unseen observations.</p>
 
 </div>
 </div>
@@ -13495,6 +13489,7 @@ Accuracy: 1.0
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Withal, there is one question remaining. How do we determine the ambiguity at test time given an unknown sample?</p>
+<p><strong>For a detailed discourse on how to address the problem and make the idea practical, see Sections 5 and 6, where a formulation is given to design probably good optimal scale factors that behave well at test time, along with techniques from Signal Processing to determine which scale factor to use.</strong></p>
 
 </div>
 </div>
